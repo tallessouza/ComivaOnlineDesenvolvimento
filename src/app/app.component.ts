@@ -39,11 +39,11 @@ export class AppComponent {
       url: '/synchronize',
       icon: 'sync'
     },
-    {
-      title: 'Política de Privacidade',
-      url: '/politica',
-      icon: 'clipboard'
-    },
+    // {
+    //   title: 'Política de Privacidade',
+    //   url: '/politica',
+    //   icon: 'clipboard'
+    // },
   ];
 //  hasNotification = false;
 
@@ -81,7 +81,7 @@ export class AppComponent {
   }
 
   showVersion() {
-    this.toastProvider.show('Versão 2.4.5');
+    this.toastProvider.show('Versão 0.0.1 Alpha');
     // alert('vai simular recebimento de notification')
     // this.synchronizeStrategy('manual', 'A')
 }

@@ -1,0 +1,38 @@
+Protheus
+☐ Remover clientes desnecessários. //Carga
+☐ Tratar cargas de dados. //Carga de Dados por Representante
+☐ Mover validações do Pedido de Venda para Validação da Importação. //u_vldPedido()
+☐ Intervalo de atualizações com proteção de atualização pela manhã.
+☐ Schedule cargas //U_siJobPed()
+
+
+Funcionalidades App
+✔ Ajustar consultas para otimizar resultados. (Palavra completa, botão, o que menos impactar) @done (17/12/2020 16:20:07) //Solução paleativa 
+☐ Tratar venda entrega futura e venda direta.
+☐ Verificar limites.
+☐ Incluir campos de frete.
+☐ Formas disponíveis para os clientes.
+☐ Remover possibilidade de alteração de cadastro por conta do representante.
+☐ Adicionar de campo com forma de pagamento para que sejam retornadas as condições referentes às mesmas. // Ver utilização atual.
+☐ Preços de Venda de acordo com representante. //Cargas Individuais
+☐ Acréscimo financeiro preço de acordo com o vendedor.  //calculeUnitPrice()
+
+
+Interface
+☐ Ocultar botão de solicitação da tela dos representantes.
+☐ Ajustar animações e botões laranjas.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Processual
+
+
+Comportamental
+
+☐ Treinamento utilização da aplicação.
+
+
+
+Plataforma
+
+☐ Ajustar chaves do cadastro de cliente.

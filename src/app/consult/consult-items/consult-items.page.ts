@@ -1,3 +1,4 @@
+import { kMaxLength } from 'buffer';
 import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/models/item';
 import { LoaderProvider } from 'src/app/services/loader/loader';
@@ -63,16 +64,18 @@ export class ConsultItemsPage implements OnInit {
   }
 
   filterItems(ev: any) {
-    this.itemsRendered = this.items
     const val = ev.target.value
-    if (val && val.trim() !== '') {
-      const itensTmp = this.itemsRendered.filter((item) => {
-        return (item.descricao.toLowerCase().indexOf(val.toLowerCase()) > -1
-          || item.codProErp.indexOf(val) > -1);
-      })
-      this.itemsRendered = itensTmp
-    } else {
-      this.itemsRendered = this.items
+    if (val.length >= 4) {
+      if (val && val.trim() !== '') {
+        this.itemsRendered = this.items
+        const itensTmp = this.itemsRendered.filter((item) => {
+          return (item.descricao.toLowerCase().indexOf(val.toLowerCase()) > -1
+            || item.codProErp.indexOf(val) > -1);
+        })
+        this.itemsRendered = itensTmp
+      } else {
+        this.itemsRendered = this.items
+      }
     }
   }
 

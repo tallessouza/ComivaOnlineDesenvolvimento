@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 
 // Configuracao para acesso ao Google RealTime Database (chat)
 export const firebaseConfig = {
-  apiKey: 'seu-apiKey',
-  authDomain: 'seu-authDomain',
-  databaseURL: 'https://sua-databaseURL',
-  projectId: 'seu-projectId',
-  storageBucket: 'seu-storageBucket',
+  apiKey: 'AIzaSyBoL_Iy8t2VMMTrvw9HVJA5y4QvzIeM-yk',
+  authDomain: 'imp-teste-igor.firebaseapp.com',
+  databaseURL: 'https://imp-teste-igor.firebaseio.com',
+  projectId: 'imp-teste-igor',
+  storageBucket: 'imp-teste-igor.appspot.com',
   messagingSenderId: 'seu-messagingSenderId'
 };
 
@@ -51,8 +51,8 @@ export class AppState {
   get API_AUTH_CFG() {
     return {
       url: 'https://v2-dot-silico-java.appspot.com/v2/oauth2/token',
-      client_id: 'seu-client_id-silico',
-      client_secret: 'seu-client_secret-silico'
+      client_id: '6bb79fa8-610c-4d1c-932e-1d723ec83a3f',
+      client_secret: 'e1216de5437bcc4439511ec4c307daf4a7d8e5ff43a282c6699c1369af356f88'
     }
   }
 

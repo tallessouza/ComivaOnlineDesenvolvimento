@@ -194,10 +194,10 @@ export class OrderGeneralFormPage implements OnInit {
       this.toastProvider.show('Selecione um plano de pagamento.');
       return false;
     }
-    if (this.showDeliveryTypes && !this.orderWrk.codEntErp) {
-      this.toastProvider.show('Selecione um tipo de entrega.');
-      return false;
-    }
+    // if (this.showDeliveryTypes && !this.orderWrk.codEntErp) {
+    //   this.toastProvider.show('Selecione um tipo de entrega.');
+    //   return false;
+    // }
     if (this.isFreightAmountRequired() && !this.orderWrk.freteVal) {
       this.toastProvider.show('Informe o valor do frete');
       return false;

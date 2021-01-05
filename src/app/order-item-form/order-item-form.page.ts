@@ -319,9 +319,9 @@ export class OrderItemFormPage implements OnInit {
     if (this.orderWrk.freteVal && this.orderWrk.freteVal > 0) {
       const paymentPlanFator = this.paymentPlan.fator ? this.paymentPlan.fator : 0;
       const comissionVal = this.comissionPercent ? (this.comissionPercent / 100) : 0;
-      const freightVal = (this.orderWrk.freteVal / 1000) * this.unitWeight;
+      const freightVal = this.orderWrk.freteVal;
 
-      let totalVal = this.unitPriceFat + freightVal;
+      let totalVal = this.unitPriceFat ;//+ freightVal;
       totalVal = totalVal / (1 - comissionVal - paymentPlanFator);
 
       this.unitPriceFat = this.formatter.round(totalVal);
@@ -522,7 +522,7 @@ export class OrderItemFormPage implements OnInit {
       const amount = this.total * (this.discountPercent / 100);
       this.discountAmount = this.formatter.round(amount);
     }
-    this.setTotal(this.total - this.discountAmount);
+    this.setTotal(this.total - this.discountAmount + this.orderWrk.freteVal);
   }
   // discount feature
 

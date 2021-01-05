@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "694917059137",
+    "firebase_url": "https://imp-teste-igor.firebaseio.com",
+    "project_id": "imp-teste-igor",
+    "storage_bucket": "imp-teste-igor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694917059137:android:097ffc423f8064eed5ecc0",
+        "android_client_info": {
+          "package_name": "com.teste.igor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694917059137-m00fgv4k16us0mog1ntnvdgeo5du1j21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoL_Iy8t2VMMTrvw9HVJA5y4QvzIeM-yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694917059137-m00fgv4k16us0mog1ntnvdgeo5du1j21.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

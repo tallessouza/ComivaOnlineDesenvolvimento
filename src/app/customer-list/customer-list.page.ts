@@ -59,7 +59,8 @@ export class CustomerListPage implements OnInit {
 
   getItems(ev: any) {
     const val = ev.target.value;
-    if (val && val.trim() !== '') {
+
+    if (val && val.trim() !== '' && val.length >= 4) {
       this.customersRendered = this.customers.filter((item) => {
         return ((item.cpfCnpj +
           item.fantasia +

@@ -4,11 +4,11 @@
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-title>Clientes</ion-title>
-    <ion-buttons slot="end">
+    <!-- <ion-buttons slot="end">
       <ion-button [routerDirection]="'root'" [routerLink]="'/customer-form'">
         <ion-icon name="add-circle"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
   <ion-toolbar color="primary">
     <ion-searchbar (ionInput)="getItems($event)" placeholder="Pesquisar"></ion-searchbar>
@@ -51,9 +51,9 @@
         <ion-button color="accent" (click)="newOrder('/order-general-form', customer)">
           <ion-icon name="add-outline"></ion-icon>Pedido
         </ion-button>
-        <ion-button color="dark" (click)="openNavigator(customer)">
+        <!-- <ion-button color="dark" (click)="openNavigator(customer)">
           <ion-icon name="navigate-outline"></ion-icon>Navegar
-        </ion-button>
+        </ion-button> -->
         <ion-button color="success" (click)="callCustomer(customer)">
           <ion-icon name="call-outline"></ion-icon>Ligar
         </ion-button>

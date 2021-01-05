@@ -14,6 +14,7 @@ const routes: Routes = [
     component: CustomerFormPage
   }
 ];
+
 @NgModule({
   imports: [
     CommonModule,

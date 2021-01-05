@@ -38,6 +38,7 @@ export class OrderFinishFormPage implements OnInit {
   customer: Customer;
   customerOrder = '';
   obs = '';
+  freteval = 0;
   deliveryDate: string;
   amountItens = 0;
   amountTotalItens = 0;
@@ -106,6 +107,7 @@ export class OrderFinishFormPage implements OnInit {
     this.deliveryDate = this.orderWrk.dataEnt;
     this.obs = this.orderWrk.obs;
     this.amountItens = this.orderWrk.itens.length;
+    this.freteval = this.orderWrk.freteVal;
     this.amountTotalItens = this.sumArrayProperty(this.orderWrk.itens, 'qtd');
     this.setTotalItens(this.sumArrayProperty(this.orderWrk.itens, 'totalItem'));
     this.setTotal(this.sumArrayProperty(this.orderWrk.itens, 'totalItem'));
@@ -161,8 +163,10 @@ export class OrderFinishFormPage implements OnInit {
     this.orderWrk.desctoPedidoVal = this.discountAmount;
     this.orderWrk.desctoPedidoPerc = this.discountPercent;
     this.orderWrk.totalPedido = this.total;
+    this.orderWrk.freteVal = this.freteval;
 
     this.orderWrk.codPlaErp = this.paymentPlan;
+    
   }
 
 

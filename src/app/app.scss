@@ -1,6 +1,6 @@
 ion-menu {
   ion-content {
-    --ion-background-color: var(--ion-color-primary);
+    --ion-background-color: #fff;
   }
 }
 
@@ -35,13 +35,13 @@ ion-label[error] {
   padding: 0 1.1em;
 }
 .btn-border {
-  border-color: #de933b;
-  color: #de933b;
+  border-color: #084b20;
+  color: #084b20;
   background-color: transparent;
 }
 .btn-block {
   color: #fff;
-  background-color: #ea9b3e;
+  background-color: #084b20;
   margin-left: 0;
   margin-right: 0;
   width: 100%;
@@ -53,9 +53,9 @@ button:disabled {
 }
 .inner-button {
   height: 2em;
-  color: #ea9b3e;
+  color: #084b20;
   background-color: #efefef;
-  border-color: #ea9b3e;
+  border-color: #084b20;
 }
 ion-item-sliding {
   ion-item-options {

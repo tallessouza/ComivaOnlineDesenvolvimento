@@ -30,7 +30,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
+    <!-- <ion-row>
       <ion-col>
         <ion-item>
           <div class="item-inner">
@@ -55,7 +55,7 @@
           </div>
         </ion-item>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
 
     <div class="ion-padding ion-text-right" *ngIf="!isView">
       <button ion-button class="ion-text-uppercase btn inner-button" (click)="repeatByCustomer()">Repetir pedido do
@@ -78,7 +78,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row *ngIf="showDeliveryTypes" >
+    <ion-row  *ngIf="showDeliveryTypes"><!-- -->
       <ion-col>
         <ion-item>
           <div class="item-inner">
@@ -93,13 +93,13 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="showDeliveryTypes" >
+    <ion-row  *ngIf="showDeliveryTypes"><!--*ngIf="showDeliveryTypes" -->
       <ion-col>
         <ion-item>
           <div class="item-inner">
             <div class="item-wrapper">
-              <ion-label stacked>Valor do frete R$ (Ton)</ion-label>
-              <ion-input type="number" [readonly]="isView || disabledFreight" [(ngModel)]="freightAmount" class="editable-input"></ion-input>
+              <ion-label stacked>Valor do frete R$ </ion-label>
+               <ion-input type="number"  [(ngModel)]="freightAmount" class="editable-input"></ion-input> <!--[readonly]="isView || disabledFreight"-->
             </div>
           </div>
         </ion-item>

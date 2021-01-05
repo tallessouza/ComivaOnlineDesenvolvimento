@@ -65,9 +65,9 @@ export class SelectItemPage implements OnInit {
   getItems(ev: any) {
     // no filtro zera os itensPrincipais
     this.itemsPrincipaisRendered = [];
-    let filtered = this.items;
     const val = ev.target.value;
-    if (val && val.trim() !== '') {
+    if (val && val.trim() !== '' && val.length >= 4) {
+      var filtered = this.items;
       filtered = filtered.filter((item) => {
         return (item.descricao.toLowerCase().indexOf(val.toLowerCase()) > -1
           || item.codProErp.indexOf(val) > -1);

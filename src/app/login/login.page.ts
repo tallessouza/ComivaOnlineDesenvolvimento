@@ -56,8 +56,8 @@ export class LoginPage implements OnInit {
     } else {
       this.createExitEvent();
       this.sentences = [
-        ' Olá, eu sou o IGOR, seu assistente para lançamento de pedidos. Vamos começar?',
-        'Apenas desta vez, me informe o seu Email para que eu possa te reconhecer.'
+        ' O acesso deve ser configurado agora!',
+        'Favor inserir o email para autenticação.'
       ];
     }
   }
