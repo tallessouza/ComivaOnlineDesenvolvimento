@@ -21,6 +21,7 @@ import { Location } from '@angular/common';
 import { SelectCustomerPage } from '../select-customer/select-customer.page';
 import { CustomErrorPage } from '../custom-error/custom-error.page';
 import { AppState } from '../app.global';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-order-finish-form',
@@ -50,6 +51,8 @@ export class OrderFinishFormPage implements OnInit {
   discountPercent = 0;
   discountAmount = 0;
   total = 0;
+  frete = 0;
+  freteFormatted: string;
   totalFormatted: string;
   paymentPlan = '';
   isOnline = false;
@@ -114,6 +117,7 @@ export class OrderFinishFormPage implements OnInit {
     this.setDiscountAmount(this.orderWrk.desctoPedidoVal);
     this.discountPercent = this.orderWrk.desctoPedidoPerc;
     this.setTotal(this.orderWrk.totalPedido);
+    this.setFrete(Number(this.orderWrk.livre1));
   }
 
   sumArrayProperty(array, property) {
@@ -139,7 +143,14 @@ export class OrderFinishFormPage implements OnInit {
     this.discountPercent = isNull ? this.discountPercent : 0;
     this.saveOnBlur();
   }
-
+  calculeFreightAmount() {
+    const isNull = !!this.frete;
+    this.frete = isNull ? this.frete : 0;
+    this.setTotal(this.totalItens);
+    this.setTotal(this.total + this.frete);
+    this.setFrete(isNull ? this.frete : 0);
+    this.saveOnBlur();
+  }
   async saveOnBlur() {
     if (!(this.orderHandleType === OrderHandleType.view)) {
       this.varsToOrder();
@@ -163,7 +174,7 @@ export class OrderFinishFormPage implements OnInit {
     this.orderWrk.totalPedido = this.total;
 
     this.orderWrk.codPlaErp = this.paymentPlan;
-    
+    this.orderWrk.livre1 = stringify(this.frete);
   }
 
 
@@ -349,7 +360,7 @@ export class OrderFinishFormPage implements OnInit {
     const isNull = !!this.discountPercent;
     this.discountPercent = isNull ? this.discountPercent : 0;
     const tempTotal = this.total = this.totalItens;
-    this.setTotal(+Math.abs((this.total * (this.discountPercent / 100) - this.total)));
+    this.setTotal(+Math.abs(((this.total * (this.discountPercent / 100) - this.total)+this.frete)));
     this.discount = +Math.abs(this.discountAmount = (tempTotal * (this.discountPercent / 100)));
     this.discountPercent = isNull ? this.discountPercent : 0;
     this.setDiscountAmount(isNull ? this.discountAmount : 0);
@@ -426,5 +437,9 @@ export class OrderFinishFormPage implements OnInit {
   setTotal(value: number) {
     this.total = value;
     this.totalFormatted = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  }
+  setFrete(value: number) {
+    this.frete = value;
+    this.freteFormatted = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   }
 }

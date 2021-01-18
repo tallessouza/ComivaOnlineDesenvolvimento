@@ -36,6 +36,7 @@ export class Order {
         public codTabErp: string, // tabela de precos do cliente
         public codEntErp: string,
         public freteVal: number,
+        public livre1: string,
     ) {
         if (this.unsync === undefined || this.unsync === null) {
             this.unsync = true;
