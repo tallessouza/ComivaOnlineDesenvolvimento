@@ -316,13 +316,15 @@ export class OrderItemFormPage implements OnInit {
    * quando existe o frete o valor unitario do item vai ser apurado.
    */
   calculeUnitPrice() {
-    if (this.orderWrk.freteVal && this.orderWrk.freteVal > 0) {
+    //Alterar cálculo do valor unitário adequando juros
+    if (this.paymentPlan.fator > 0) {
       const paymentPlanFator = this.paymentPlan.fator ? this.paymentPlan.fator : 0;
-      const comissionVal = this.comissionPercent ? (this.comissionPercent / 100) : 0;
-      const freightVal = this.orderWrk.freteVal;
+      //const comissionVal = this.comissionPercent ? (this.comissionPercent / 100) : 0;
+      //const freightVal = this.orderWrk.freteVal;
 
       let totalVal = this.unitPriceFat ;//+ freightVal;
-      totalVal = totalVal / (1 - comissionVal - paymentPlanFator);
+      totalVal = totalVal + (totalVal * (paymentPlanFator/100));
+      console.log(paymentPlanFator)
 
       this.unitPriceFat = this.formatter.round(totalVal);
       this.setUnitPrice(this.unitPriceFat * this.fatorFat);
